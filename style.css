@@ -1,0 +1,29 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav {
+    background-image: linear-gradient(to right, rgb(110, 110, 219), rgb(19, 19, 65));
+    color: rgb(255, 255, 255);
+    margin: 10px;
+}
+
+.flex-row {
+    margin: 10px;
+}
+
+.form-input {
+    width: 80%;
+    height: 38px;
+}
+
+.btn {
+    width: 80%;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(136, 136, 218);
+    text-align: center;
+    padding-bottom: 9%;
+}
+
+

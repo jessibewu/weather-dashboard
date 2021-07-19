@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,100&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather Dashboard</title>
+</head>
+<body>
+   
+<div class="nav justify-content-center pt-3 pb-3">
+    <h1>Weather Dashboard</h1>
+</div>    
+
+<main class="flex-row justify-space-between">
+    <div class="col-12 col-md-4">
+    <div class="row">
+      <h3>Search for a City:</h3>
+      <form id="user-form">
+        <input name="city" id="cityName" type="text" autofocus="true" class="form-input mb-2" placeholder="Toronto"/>
+        <button type="submit" class="btn mb-2">Search</button>
+      </form>
+    </div>
+    <div class="row">
+      <div id="previouSearch">
+
+      </div>
+    </div>
+  </div>
+
+    <div class="col-12 col-md-8">
+      <h2 class="card"> </h2>
+      <span id="cityInfo"></span>
+      <div id="forecase-container" class="list-group"></div>
+    </div>
+  </main>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
