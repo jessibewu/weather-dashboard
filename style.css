@@ -8,22 +8,20 @@
     margin: 10px;
 }
 
-.flex-row {
-    margin: 10px;
-}
-
 .form-input {
     width: 80%;
     height: 38px;
 }
 
 .btn {
-    width: 80%;
-    height: 30px;
+    min-width: 80%;
+    min-height: 5px;
     color: rgb(255, 255, 255);
     background-color: rgb(136, 136, 218);
     text-align: center;
-    padding-bottom: 9%;
 }
 
+h6 {
+    padding-top: 5px;
+}
 
