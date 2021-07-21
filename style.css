@@ -8,7 +8,7 @@
     margin: 10px;
 }
 
-.form-input {
+.form-control, .list-group {
     width: 80%;
     height: 38px;
 }
@@ -19,6 +19,10 @@
     color: rgb(255, 255, 255);
     background-color: rgb(136, 136, 218);
     text-align: center;
+}
+
+.list-group {
+    padding-top: 10px;
 }
 
 h6 {
