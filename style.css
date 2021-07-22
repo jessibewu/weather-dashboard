@@ -21,11 +21,11 @@
     text-align: center;
 }
 
-.list-group {
-    padding-top: 10px;
-}
-
 h6 {
     padding-top: 5px;
+}
+
+.city-title, .image1, .city-uv, .city-uv-class {
+    display: inline;
 }
 
