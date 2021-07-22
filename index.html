@@ -15,21 +15,22 @@
     <h1>Weather Dashboard</h1>
 </div>    
 
-<main class="container justify-space-around">
-  <div class="row">
-    <div class="col-sm-4  mt-2">
+<main class="justify-space-around">
+  <div class="row row-search">
+    <div class="col-sm-2  mt-2">
       <h3>Search for a City:</h3>
+        <form>
         <input type="search" id="city-name" autofocus="true" class="form-control mb-2" placeholder="Toronto"/>
         <button type="submit" class="btn mb-2">Search</button>
-        
+        </form>
       <div id="previouSearch">
         <ul class="list-group mt-2">      
         </ul>
     </div>
   </div>
   
-      <div class="col-sm-8  mt-2 content">
-      <div class="card"> 
+      <div class="col-sm-10  mt-2 content">
+      <div class="card" style="width: 45rem;"> 
       <div class="card-body" id="cityInfo">
         <h3 class="card-title city-title"></h3><img class="image"></img>   
         <p class="card-subtitle city-temp pb-2"></p>
@@ -40,11 +41,12 @@
       </div>
       
       <div>
-        <h3 class="col-sm-8 forecast-header mt-3"></h3>
+        <h3 class="col-sm-10 forecast-header mt-3"></h3>
       </div>
-      <div class="flex-row">
+      <div class="row">
+        <div class="col-sm-2">
         <div class="card"> 
-        <div class="card-body">
+        <div class="card-body forecast">
           <h3 class="card-title" id="day-1"></h3>
           <img id="icon-1"></img>   
           <p class="card-subtitle pb-2" id="city-temp-1"></p>
@@ -52,17 +54,23 @@
           <p class="card-subtitle pb-2" id="city-humidity-1"></p>
       </div>
       </div>
+      </div>
+     
+      <div class="col-sm-2">
       <div class="card"> 
-      <div class="card-body">
+      <div class="card-body forecast">
         <h3 class="card-title" id="day-2"></h3>
         <img id="icon-2"></img>   
         <p class="card-subtitle pb-2" id="city-temp-2"></p>
         <p class="card-subtitle pb-2" id="city-wind-2" ></p>
         <p class="card-subtitle pb-2" id="city-humidity-2"></p>
+    
     </div>
     </div>
+    </div>
+    <div class="col-sm-2">
     <div class="card"> 
-      <div class="card-body">
+      <div class="card-body forecast">
         <h3 class="card-title" id="day-3"></h3>
         <img id="icon-3"></img>   
         <p class="card-subtitle pb-2" id="city-temp-3"></p>
@@ -70,8 +78,10 @@
         <p class="card-subtitle pb-2" id="city-humidity-3"></p>
     </div>
     </div>
+    </div>
+    <div class="col-sm-2">
     <div class="card"> 
-      <div class="card-body">
+      <div class="card-body forecast">
         <h3 class="card-title" id="day-4"></h3>
         <img id="icon-4"></img>   
         <p class="card-subtitle pb-2" id="city-temp-4"></p>
@@ -79,13 +89,16 @@
         <p class="card-subtitle pb-2" id="city-humidity-4"></p>
     </div>
     </div>
+    </div>
+    <div class="col-sm-2">
     <div class="card"> 
-      <div class="card-body">
+      <div class="card-body forecast">
         <h3 class="card-title" id="day-5"></h3>
         <img id="icon-5"></img>   
         <p class="card-subtitle pb-2" id="city-temp-5"></p>
         <p class="card-subtitle pb-2" id="city-wind-5" ></p>
         <p class="card-subtitle pb-2" id="city-humidity-5"></p>
+    </div>
     </div>
     </div>
 

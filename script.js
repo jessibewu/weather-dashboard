@@ -1,4 +1,3 @@
-var cityInfo = document.querySelector("#cityInfo");
 var city = "";
 var searchedCities = [];
 var currentCity = $("#city-name").text(city);
@@ -12,9 +11,8 @@ body.onload = function() {
     
 };
 
-
 var searchHistory = function() {
-    
+
     $(".list-group").empty();
     searchedCitiesString = localStorage.getItem("searchedCities");
 
@@ -41,15 +39,11 @@ var apiCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + userCity
     // make a get request to url
     fetch(apiCurrent)
     .then(function(response) {
-      return response.json();
-    })
+        if (response.ok) {
+        return response.json();
+    }})
     .then(function(data) {
       console.log(data);
-             //displayRepos(data, user);
-        //     });
-        // } else {
-        //     alert("Error: " + response.statusText);
-        // }
                 
         var cityTime = moment(data.dt * 1000).format("MM/DD/YYYY");
         var iconCode = data.weather[0].icon;
@@ -65,13 +59,13 @@ var apiCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + userCity
 
         fetch(uvIndexUrl)
             .then(function(response) {
+                if (response.ok) {
                 return response.json();
-            })
+            }})
             .then(function(data) {
                 console.log(data);
 
-                //$("#cityInfo").addClass("hide");
-                
+                //UV Index:
                 $(".city-uv").text("UV Index: "); 
                 $(".city-uv-class").text(data.current.uvi); 
 
@@ -99,15 +93,8 @@ var apiCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + userCity
                     $("#city-humidity-" + j).text("Humidity: " + data.daily[i].humidity + "%");
                     j++;
                 }
-
-            })
-        });
-        
-
-        // .catch(function(error) {
-        // alert("Unable to connect to Open Weather");
-        //});
-
+            });            
+        });   
 };
 
 
@@ -126,7 +113,9 @@ $(".btn").click(function (event) {
 
         getCityInfo(city);
     }
-
+    else {(alert("Please enter a city name."));
+        }  
+    
     $("#city-name").val("");
 
 });

@@ -8,6 +8,10 @@
     margin: 10px;
 }
 
+.row-search {
+    margin-left:10px;
+}
+
 .form-control, .list-group {
     width: 80%;
     height: 38px;
@@ -27,5 +31,10 @@ h6 {
 
 .city-title, .image1, .city-uv, .city-uv-class {
     display: inline;
+}
+
+.forecast {
+    background-image: linear-gradient(to right, rgb(105, 105, 182), rgb(161, 161, 201));
+    color: rgb(255, 255, 255);
 }
 
