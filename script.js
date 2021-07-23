@@ -39,12 +39,33 @@ var apiCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + userCity
     // make a get request to url
     fetch(apiCurrent)
     .then(function(response) {
+
+        if (response.status !== 200) {
+            $(".city-title").text('Error: Status Code ' + response.status);
+            icon.hide();
+            $(".city-temp").hide();
+            $(".city-wind").hide();
+            $(".city-humidity").hide();
+            $(".city-uv").hide();
+            $(".city-uv-class").hide();
+            $(".5dayForecast").hide();       
+            return false;
+          }
+
         if (response.ok) {
-        return response.json();
+            $(".city-title").show();
+            icon.show();
+            $(".city-temp").show();
+            $(".city-wind").show();
+            $(".city-humidity").show();
+            $(".city-uv").show();
+            $(".city-uv-class").show();     
+            $(".5dayForecast").show();        
+            return response.json();
     }})
-    .then(function(data) {
-      console.log(data);
-                
+        .then(function(data) {
+        console.log(data);    
+      
         var cityTime = moment(data.dt * 1000).format("MM/DD/YYYY");
         var iconCode = data.weather[0].icon;
         var iconUrl = "http://openweathermap.org/img/wn/" + iconCode + ".png";
