@@ -41,7 +41,7 @@ var apiCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + userCity
     .then(function(response) {
 
         if (response.status !== 200) {
-            $(".city-title").text('Error: Status Code ' + response.status);
+            $(".city-title").text('Error ' + response.status + " : " + response.statusText);
             icon.hide();
             $(".city-temp").hide();
             $(".city-wind").hide();
