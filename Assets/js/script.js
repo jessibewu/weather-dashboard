@@ -1,6 +1,5 @@
 var city = "";
 var searchedCities = [];
-var currentCity = $("#city-name").text(city);
 var icon = $(".image");
 var apiKey = "02a19a3f81c6935cc3484c6eeb936427";
 var body = document.body;
@@ -11,6 +10,7 @@ body.onload = function() {
     
 };
 
+// get localStorage of the searched cities & append to the list
 var searchHistory = function() {
 
     $(".list-group").empty();
@@ -24,7 +24,7 @@ var searchHistory = function() {
 
     searchedCities.forEach(function (searchedCity) {
         var cityList = $("<li class=list-group-item>");
-        cityList.addClass("city-list bg-light");
+        cityList.addClass("city-list bg-light mb-2 border rounded");
         cityList.text(searchedCity);
         $(".list-group").append(cityList);
     });
@@ -36,7 +36,7 @@ var getCityInfo = function(userCity) {
 
 var apiCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + userCity + "&appid=" + apiKey + "&units=metric";
 
-    // make a get request to url
+    // make a fetch request to url with the city name
     fetch(apiCurrent)
     .then(function(response) {
 
@@ -78,6 +78,7 @@ var apiCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + userCity
                   
         var uvIndexUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&appid=" + apiKey + "&units=metric";
 
+        // make a fetch request to url with the coordinates(lat & lon) of the city from the previous fetch function to get UV index
         fetch(uvIndexUrl)
             .then(function(response) {
                 if (response.ok) {
@@ -86,7 +87,7 @@ var apiCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + userCity
             .then(function(data) {
                 console.log(data);
 
-                //UV Index:
+                //UV Index - if functions to show diff colors:
                 $(".city-uv").text("UV Index: "); 
                 $(".city-uv-class").text(data.current.uvi); 
 
@@ -129,7 +130,7 @@ $(".btn").click(function (event) {
         // add searched city to searchedCities array
         searchedCities.push(city);
         localStorage.setItem("searchedCities", JSON.stringify(searchedCities));
-       
+    
         searchHistory();
 
         getCityInfo(city);

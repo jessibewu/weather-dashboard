@@ -13,7 +13,7 @@ https://jessibewu.github.io/weather-dashboard/
 ## Usage 
 Below is a screenshot of the application: 
 
-![alt text](screenshot.png) 
+![alt text](./Assets/screenshot.png) 
 
 ## Credits: 
 https://courses.bootcampspot.com/
