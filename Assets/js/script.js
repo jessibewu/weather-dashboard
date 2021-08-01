@@ -24,7 +24,7 @@ var searchHistory = function() {
 
     searchedCities.forEach(function (searchedCity) {
         var cityList = $("<li class=list-group-item>");
-        cityList.addClass("city-list bg-light mb-2 border rounded");
+        cityList.addClass("city-list bg-light mb-2 border rounded text-center");
         cityList.text(searchedCity);
         $(".list-group").append(cityList);
     });
