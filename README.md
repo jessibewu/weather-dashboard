@@ -1,4 +1,4 @@
-# weather-dashboard
+# Weather Dashboard
 
 ## Description 
 - to create a weather dashboard with form inputs
